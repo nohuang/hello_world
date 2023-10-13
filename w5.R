@@ -18,17 +18,23 @@ flights <- list(
   data = list(data1)
 )
 
-flights = readRDS("flights.rds")
 
 filepath = flights$data[[1]]$file
 
-flightData = jsonlite::fromJSON(filepath)
+flights$data[[1]][[2]]
+
+flightsData <- jsonlite::fromJSON(filepath)
 
 flights$data[[1]]$data_frame <- flightsData
-flightsData
 
 typeof(flightsData)
 class(flightsData)
+
+flightsData[3,"ScheduleStartDate"]
+flightsData[3,2]
+flightsData[c(2,4),c("AirlineID","ScheduleStartDate","FlightNumber")]
+flightsData[c(2,4),c(1,3,4)]
+
 
 saveRDS(flights, "flights.rds")
 
