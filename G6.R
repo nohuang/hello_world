@@ -57,9 +57,7 @@ dg6 |>
 
 View(dg6_filtered_3)
 
-dg6_filtered_3[1, ][4:19]
-
-x <- dg6_filtered_3[1, ][4:19]
+x <- as.numeric(dg6_filtered_3[1, ][4:19])
 labels <- c(colnames(dg6_filtered_3[1, ][4:19]))
 
 # Give the chart file a name.
